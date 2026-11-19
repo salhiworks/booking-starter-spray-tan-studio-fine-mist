@@ -1,0 +1,8 @@
+/*
+ * The packaged dashboard keeps its own design. The site brands it with one
+ * thing — its accent, per appearance (INTEGRATION.md §10). Fine Mist's accent is
+ * a light violet base carrying ink text, in both modes. Owner monogram,
+ * primary buttons, Confirm, focus rings, selection and the schedule's "now" line follow it.
+ */
+:root .pbe-admin[data-mode='light'] { --pbe-accent: #c4b2e6; --pbe-accent-text: #1c2124; } /* ink on violet ≈8.2:1 */
+:root .pbe-admin[data-mode='dark']  { --pbe-accent: #cdbdf0; --pbe-accent-text: #1c2124; } /* ink on violet ≈9:1 */
