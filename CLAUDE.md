@@ -6,7 +6,7 @@ Village, Buffalo: a custom full-body spray tan, an express spray tan, an event-r
 upper-body spray tan, a tan refresh appointment and a free first spray tan consultation — one client
 and one service per appointment, at one fixed studio address) for the owner to make their own. Its
 identity lives in `src/site.config.ts`; `CUSTOMIZE.md` is the prompt that personalizes it. Built
-around **@profitstudio/booking-engine** **2.0.0-beta.3** (pinned; lock in `booking-engine.lock.json`).
+around **@profitstudio/booking-engine** **2.0.0-beta.4** (pinned; lock in `booking-engine.lock.json`).
 The engine owns booking; this project owns the public design.
 
 Read before changing anything:
@@ -43,6 +43,11 @@ Read before changing anything:
 - Handle `ok: false` on every call. Show success only after `verifyBooking()` returned `ok: true`
   (pending → "Request received — we'll check the calendar and confirm the time shortly.",
   confirmed → "Your appointment is booked."). Preview answers `PREVIEW_MODE`: say so honestly, never a success screen.
+- Read the engine's answer strictly (`src/lib/bookingStatus.ts`): say "booked" only when `status === 'confirmed'`
+  and "request received" only when it is `'pending'` — never treat "not pending" as booked. `BOOKING_INACTIVE`
+  (the code was accepted earlier, but the request was declined, cancelled or not confirmed in time) is never a
+  success: show "This request is no longer active. Please choose a new time or contact the business." with the
+  reference, go back to the times, and forget the remembered code so no recovery path verifies it again.
 - `business.policies.onlineBookingEnabled === false` (or `BOOKING_DISABLED`) → contact details instead of the flow.
 - The engine sends every booking email. Never add an email service to the website.
 - Keep the packaged dashboard on `/admin/` (`admin/index.html` → `src/admin-main.tsx`). Never fork or restyle it:
