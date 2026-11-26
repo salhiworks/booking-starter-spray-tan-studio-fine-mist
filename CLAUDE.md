@@ -6,7 +6,7 @@ Village, Buffalo: a custom full-body spray tan, an express spray tan, an event-r
 upper-body spray tan, a tan refresh appointment and a free first spray tan consultation — one client
 and one service per appointment, at one fixed studio address) for the owner to make their own. Its
 identity lives in `src/site.config.ts`; `CUSTOMIZE.md` is the prompt that personalizes it. Built
-around **@profitstudio/booking-engine** **2.0.0-beta.4** (pinned; lock in `booking-engine.lock.json`).
+around **@profitstudio/booking-engine** **2.0.0** (pinned; lock in `booking-engine.lock.json`).
 The engine owns booking; this project owns the public design.
 
 Read before changing anything:
