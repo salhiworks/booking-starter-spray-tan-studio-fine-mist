@@ -30,7 +30,7 @@ condensed didone) for headings and large figures, its emphasised words light; Ur
 labels; one ornament, the mist — the fine stipple at the edge of a spray pass.
 
 Booking runs on [`@profitstudio/booking-engine`](https://www.npmjs.com/package/@profitstudio/booking-engine)
-**2.0.0** (pinned) with your own Supabase project and Resend for email.
+**2.0.1** (pinned) with your own Supabase project and Resend for email.
 
 ## 1. Try it (no accounts needed)
 
